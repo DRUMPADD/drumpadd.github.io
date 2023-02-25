@@ -9,9 +9,11 @@ async function usuario() {
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
-        },
+        }, 
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer'
     })
-    const res = await respuesta.json();
+    const res = await respuesta.json(); 
     return res;
 }
 
