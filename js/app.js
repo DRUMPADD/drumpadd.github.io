@@ -11,8 +11,7 @@ async function usuario() {
             'Content-Type': 'application/json',
         },
     })
-
-    const res = await respuesta.json(); 
+    const res = await respuesta.json();
     return res;
 }
 
