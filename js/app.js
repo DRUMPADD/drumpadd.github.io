@@ -33,9 +33,6 @@ async function getRepos(url) {
     return respuesta.json();
 }
 
-var obj;
-var user, name, image, respositories = [];
-
 usuario().then(dato => {
     document.getElementById("username").innerText = dato.login;
     document.getElementById("img-me").src = dato.avatar_url;
@@ -52,7 +49,7 @@ usuario().then(dato => {
                 if(id_ == el.id) {
                     div.className = "content-repo";
                     child_a.setAttribute("href", "https://github.com/" + el.full_name);
-                    child_a.innerHTML = el.name;
+                    child_a.innerText = el.name;
                     child_p.innerText = el.description;
                     div.appendChild(child_a);
                     div.appendChild(child_p);
@@ -64,4 +61,3 @@ usuario().then(dato => {
     });
 })
 
-// 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
