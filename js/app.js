@@ -1,6 +1,6 @@
 const repos = document.querySelector(".repos");
 const id_repos = [362370228, 496756293, 494965091, 295046616, 395788708, 403221115];
-console.log(repos);
+
 async function usuario() {
     const respuesta = await fetch("https://api.github.com/users/DRUMPADD", {
         method: 'GET',
@@ -9,12 +9,11 @@ async function usuario() {
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
-        }, 
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer'
+        },
     })
 
-    return respuesta.json();
+    const res = await respuesta.json(); 
+    return res;
 }
 
 async function getRepos(url) {
@@ -53,11 +52,11 @@ usuario().then(dato => {
                     child_p.innerText = el.description;
                     div.appendChild(child_a);
                     div.appendChild(child_p);
+                    repos.appendChild(div);
                 }
             })
-
-            repos.appendChild(div);
         });
+        console.log(repos)
     });
 })
 
