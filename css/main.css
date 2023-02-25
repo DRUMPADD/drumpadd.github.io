@@ -229,6 +229,7 @@ body {
     transition: .3s linear;
 }
 
+.container,
 .languages .title,
 .languages-content img,
 .content-repo a,
